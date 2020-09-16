@@ -30,3 +30,10 @@ Feature: Login Page
         Given The user opens login page
         When Clicks on the Sign In button
         Then Error message should be visible Please fill in this field
+
+    Scenario: verify creat new user page
+        Given The user opens login page
+        And Types in user name input field
+        And Types in user password input field
+        When Clicks on the Sign In button
+        Given The system has a user

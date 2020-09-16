@@ -53,7 +53,7 @@
         "cypress-cucumber-preprocessor": "^2.2.0",
         "cypress-file-upload": "^4.1.1",
         "cypress-multi-reporters": "^1.4.0",
-        "eslint": "^7.3.1",
+        "eslint": "^7.9.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-config-standard": "^14.1.1",
         "eslint-import-resolver-webpack": "^0.12.2",
@@ -73,10 +73,5 @@
     "cypress-cucumber-preprocessor": {
         "nonGlobalStepDefinitions": true,
         "stepDefinitions": "cypress/integration"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
     }
 }

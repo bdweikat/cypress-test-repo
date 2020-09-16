@@ -1,6 +1,6 @@
 import { eq } from "cypress/types/lodash"
 
-class Assertions {
+class LogInPageAssertions {
 
     checkHomePageIsOpen() {
         cy.url().should('include', 'https://qaintazugg.restaurant365.com/#/grid/AllTransactionsGrid/00000000-0000-0000-0000-000000000000')
@@ -19,4 +19,4 @@ class Assertions {
             expect(txt).to.contains('Invalid UserNmae Or Password');
         })
     }
-} export default Assertions  
+} export default LogInPageAssertions

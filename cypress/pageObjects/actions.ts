@@ -1,27 +1,19 @@
-class Actions {
+class LogInPageActions {
 
     openLoginPage() {
-        cy.visit('https://qaintazugg.restaurant365.com/')
+        cy.visit(Cypress.config("baseUrl"))
     }
 
-    tpyeInUsernameInputField() {
-        return cy.get('input[type="text"]').type('cypressUser')
+    tpyeInUsernameInputField(username: string) {
+        return cy.get('input[type="text"]').type(username)
     }
 
-    typeInPasswordInputField() {
-        return cy.get('input[type="password"]').type('R3656wp')
-    }
-
-    typeInInvalidUserNameInputField() {
-        return cy.get('input[type="text"]').type('sondos')
-    }
-
-    typeInInvalidPasswordInputField() {
-        return cy.get('input[type="password"]').type('ggggg')
+    typeInPasswordInputField(userpassword: string) {
+        return cy.get('input[type="password"]').type(userpassword)
     }
 
     clickOnSignInButton() {
         cy.get('.btn').contains('Sign In').click()
     }
 }
-export default Actions  
+export default LogInPageActions
