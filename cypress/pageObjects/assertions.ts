@@ -3,20 +3,17 @@ import { eq } from "cypress/types/lodash"
 class LogInPageAssertions {
 
     checkHomePageIsOpen() {
-        cy.url().should('include', 'https://qaintazugg.restaurant365.com/#/grid/AllTransactionsGrid/00000000-0000-0000-0000-000000000000')
+        cy.url().should('include', '#/grid/AllTransactionsGrid/00000000-0000-0000-0000-000000000000')
 
     }
 
-    checkValidationMessageIsVisible() {
+    checkValidationMessageIsVisible(isVisible: boolean) {
 
-        cy.contains("This Field Is Required").should('be.visible')
+        cy.contains("This Field Is Required").should(isVisible ? 'be.visible' : 'not.be.visible')
     }
 
     checkInvalidUserNameOrPasswprd() {
-
-        cy.on('window:alert', (txt) => {
-
-            expect(txt).to.contains('Invalid UserNmae Or Password');
-        })
+        cy.contains("Invalid UserName or Password").should('be.visible')
     }
+
 } export default LogInPageAssertions

@@ -1,7 +1,8 @@
 class LogInPageActions {
 
     openLoginPage() {
-        cy.visit(Cypress.config("baseUrl"))
+        cy.visit("#/user/login")
+        cy.wait(10000)
     }
 
     tpyeInUsernameInputField(username: string) {

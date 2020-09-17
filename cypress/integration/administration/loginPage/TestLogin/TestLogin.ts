@@ -1,12 +1,14 @@
 import CreateNewUserAPIRequest from "@pageObjects/creatnewuser";
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
-import LogInPageActions from "../../../../pageObjects/actions";
+import LogInPageActions from "../../../../pageObjects/LogInPage/actions";
 import LogInPageAssertions from '../../../../pageObjects/assertions';
+import MyReportsActions from "@pageObjects/ReportsPage/actions";
 
 
 const createUser = new CreateNewUserAPIRequest()
 const loginActions = new LogInPageActions()
 const loginAssertions = new LogInPageAssertions()
+
 
 Given("The system has a user", () => {
     createUser.createNewUser('sondos alzain2', 'sondos2', 'Soso@591995', 'sondos@testtest.com')
@@ -14,7 +16,7 @@ Given("The system has a user", () => {
 
 Given("The user opens login page", () => {
     loginActions.openLoginPage()
-    cy.wait(10000)
+
 })
 
 Given("Types in user name input field", () => {
@@ -31,7 +33,7 @@ Given("Types in invalid user name input field", () => {
     loginActions.tpyeInUsernameInputField('sondos')
 })
 
-Given("Types in invalid password input field", () => {
+When("Types in invalid password input field", () => {
 
     loginActions.typeInPasswordInputField('ggggggg')
 })
@@ -46,7 +48,7 @@ Then('Home page should be open', () => {
 })
 
 Then('Error message should be visible Please fill in this field', () => {
-    loginAssertions.checkValidationMessageIsVisible()
+    loginAssertions.checkValidationMessageIsVisible(false)
 })
 
 Then('Shuold see pop up error message Invalid UserNmae Or Password', () => {
