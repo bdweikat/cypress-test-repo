@@ -5,7 +5,8 @@ class MyReportsActions {
     }
 
     tpyeInReportSearchInputField(reporttitle: string) {
-        return cy.get('input[id=input_0]').type(reporttitle)
+        cy.get('input[id=input_0]').type(reporttitle)
+        return this
     }
 
     clickOnOkButton() {

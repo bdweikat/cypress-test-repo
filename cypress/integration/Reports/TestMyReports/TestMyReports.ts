@@ -31,7 +31,7 @@ When('Clicks on the Sign In button', () => {
 })
 
 Then('Home page should be open', () => {
-    loginAssertions.checkHomePageIsOpen("CypressUser")
+    loginAssertions.checkHomePageIsOpen("cypressUser")
 })
 
 Given("The user opens My Report Page", () => {
