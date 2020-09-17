@@ -7,12 +7,12 @@ class LogInPageActions {
 
     tpyeInUsernameInputField(username: string) {
         cy.get('input[type="text"]').type(username)
-        return this
+        return this;
     }
 
     typeInPasswordInputField(userpassword: string) {
         cy.get('input[type="password"]').type(userpassword)
-        return this
+        return this;
     }
 
     clickOnSignInButton() {
