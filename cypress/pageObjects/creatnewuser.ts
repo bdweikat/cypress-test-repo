@@ -1,6 +1,6 @@
 class CreateNewUserAPIRequest {
 
-    createNewUser = (FullName: string, userLogin: string, password: string, email: string) => {
+    createNewUser = (fullName: string, userLogin: string, password: string, email: string) => {
         cy.request({
             failOnStatusCode: false,
             method: "POST",
@@ -28,7 +28,7 @@ class CreateNewUserAPIRequest {
                     ExchangeRate: null,
                     FirstName: null,
                     FullAccess: false,
-                    FullName: FullName,
+                    FullName: fullName,
                     GovernmentId: null,
                     HomePhone: null,
                     Id: "00000000-0000-0000-0000-000000000000",
@@ -91,7 +91,7 @@ class CreateNewUserAPIRequest {
                     dm_Inactive: null,
                     dm_Location: "d82ecbbb-d055-4b0f-924a-99c492681490",
                     dm_Login: userLogin,
-                    dm_LoginPassword: userLogin,
+                    dm_LoginPassword: password,
                     dm_Newfeature: null,
                     dm_R365: 0,
                     dm_Theme: null,

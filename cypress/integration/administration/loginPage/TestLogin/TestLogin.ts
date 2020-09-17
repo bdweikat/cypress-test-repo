@@ -1,7 +1,7 @@
 import CreateNewUserAPIRequest from "@pageObjects/creatnewuser";
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import LogInPageActions from "../../../../pageObjects/LogInPage/actions";
-import LogInPageAssertions from '../../../../pageObjects/assertions';
+import LogInPageAssertions from '../../../../pageObjects/LogInPage/assertions';
 import MyReportsActions from "@pageObjects/ReportsPage/actions";
 
 
@@ -44,11 +44,11 @@ When('Clicks on the Sign In button', () => {
 })
 
 Then('Home page should be open', () => {
-    loginAssertions.checkHomePageIsOpen()
+    loginAssertions.checkHomePageIsOpen('cypressUser')
 })
 
 Then('Error message should be visible Please fill in this field', () => {
-    loginAssertions.checkValidationMessageIsVisible(false)
+    loginAssertions.checkValidationMessageIsVisible(true)
 })
 
 Then('Shuold see pop up error message Invalid UserNmae Or Password', () => {
