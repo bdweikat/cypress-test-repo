@@ -2,7 +2,7 @@ import CreateNewUserAPIRequest from "@pageObjects/creatnewuser";
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import LogInPageActions from "../../../../pageObjects/LogInPage/actions";
 import LogInPageAssertions from '../../../../pageObjects/LogInPage/assertions';
-import MyReportsActions from "@pageObjects/ReportsPage/actions";
+
 
 
 const createUser = new CreateNewUserAPIRequest()
