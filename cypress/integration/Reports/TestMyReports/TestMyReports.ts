@@ -1,8 +1,9 @@
-import MyReportsPageAssertions from "cypress/integration/Reports/TestMyReports/myReportAssertions";
-import MyReportsActions from "@pageObjects/ReportsPage/actions";
+
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import LogInPageAssertions from "@pageObjects/LogInPage/assertions";
 import LogInPageActions from "@pageObjects/LogInPage/actions";
+import MyReportsActions from "@pageObjects/ReportsPage/actions";
+import MyReportsPageAssertions from "@pageObjects/ReportsPage/myReportAssertions";
 
 const myReportsActions = new MyReportsActions()
 const loginActions = new LogInPageActions()
