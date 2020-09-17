@@ -39,8 +39,8 @@ Given("The user opens My Report Page", () => {
 
 })
 
-Given("Types in report title in search field", () => {
-    myReportsActions.tpyeInReportSearchInputField('Flash ')
+When("Types in report title in search field", () => {
+    myReportsActions.tpyeInReportSearchInputField("Flash Report{enter}")
 })
 
 When('The user type enter', () => {
@@ -54,5 +54,5 @@ Given('Click on Ok button', () => {
 })
 
 Then('Report title should be listed in the results', () => {
-    myReportsPageAssertions.checkReporttitleIsListed()
+    myReportsPageAssertions.checkListContainsReport("Flash Report", true)
 })

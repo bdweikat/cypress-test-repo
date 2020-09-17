@@ -3,8 +3,8 @@ import { eq } from "cypress/types/lodash"
 
 class MyReportsPageAssertions {
 
-    checkReporttitleIsListed() {
-        cy.contains("h3", "Flash Report").should("be.visible")
+    checkListContainsReport(reportName: string, isContain: boolean) {
+        cy.contains("h3", reportName).should("be.visible")
     }
 
 } export default MyReportsPageAssertions 
