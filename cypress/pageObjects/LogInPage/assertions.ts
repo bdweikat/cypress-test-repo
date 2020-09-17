@@ -3,6 +3,7 @@ import { eq } from "cypress/types/lodash"
 class LogInPageAssertions {
 
     checkHomePageIsOpen(userName: string) {
+
         cy.get("li[data-testid=userNameRibbonMenu]").should("contain", userName);
     }
 
