@@ -1,20 +1,21 @@
-class Login{
+import '@testing-library/cypress/add-commands';
+
+
+class LoginPageActions{
 
     openR365LoginPage(){
         cy.visit('#/user/login');
     }
 
-    fillUsernameField( username){
-        cy.get('[data-testid=userIdInputField]').type(username)
-
+    fillUsernameField( username : string){
+        cy.findByTestId('userIdInputField').type(username);
     }
-    fillPasswordField( password){
-        cy.get('[data-testid=passwordInputField]').type(password)
-
+    fillPasswordField( password : string){
+        cy.findByTestId('passwordInputField').type(password);
     }
     clickOnSigninButton(){
-        cy.get('[data-testid=signInButton]').should('be.visible').click()
+        cy.findByTestId('signInButton').should('be.visible').click()
     }
     
 
-} export default Login;
+} export default LoginPageActions;

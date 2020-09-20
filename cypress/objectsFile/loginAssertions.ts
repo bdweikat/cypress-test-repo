@@ -1,17 +1,12 @@
-class loginAss{
+class LoginPageAssertions{
 
-checkLoginResult(value:string){
+CheckErrorMessageIsDisplay(value: string){
     cy.contains(value).should('be.visible');
  
 }
 
-checkURL(value :string ){
-    if(value=='fail')
-    cy.url().should('contain', '/login') ;
-    else if(value=='success')
-    cy.url().should('contain', '/grid/AllTransactionsGrid');
 
- 
-
+checkHomePageIsOpen(isOpen: boolean){
+    cy.url().should("contains", isOpen ? "/grid/AllTransactionsGrid" : "/login");
 }
-}export default loginAss;
+}export default LoginPageAssertions;
