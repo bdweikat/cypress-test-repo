@@ -6,21 +6,9 @@ import  LoginPageAssertions  from "../../objectsFile/loginAssertions";
 import { userInfo } from "os";
 
 
-const R365Api=new R365Apis();
-Given ("open create user page",()=>{
-    R365Api.createR365User({ userFullName:'test34',
-        userLoginName:'test343',
-        userPassword:'pass343',
-        userLocation:'746cfd04-0de5-e711-93ff-0cc47abcc4a5',
-        userNumber:'1234567765',
-        userEmail:'test34@gmail.com'});
-
-
-})
-
-
 const loginPageActions = new LoginPageActions();
 const loginPageAssertions=new LoginPageAssertions();
+const R365Api=new R365Apis();
 
 Given('I open R365 login page', () => {
   loginPageActions.openR365LoginPage();
@@ -51,4 +39,14 @@ Given('I open R365 login page', () => {
     }
    
   });
+  Then ("create user using API",()=>{
+    R365Api.createR365User({ userFullName:'test209',
+        userLoginName:'test343',
+        userPassword:'pass343',
+        userLocation:'746cfd04-0de5-e711-93ff-0cc47abcc4a5',
+        userNumber:'1234567765',
+        userEmail:'test34@gmail.com'});
+
+
+})
   
