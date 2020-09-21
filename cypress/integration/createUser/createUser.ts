@@ -8,7 +8,9 @@ import { userInfo } from "os";
 
 const loginPageActions = new LoginPageActions();
 const loginPageAssertions=new LoginPageAssertions();
-const R365Api=new R365Apis();
+const r365Api=new R365Apis();
+let userId:string;
+let vall:string;
 
 Given('I open R365 login page', () => {
   loginPageActions.openR365LoginPage();
@@ -40,13 +42,15 @@ Given('I open R365 login page', () => {
    
   });
   Then ("create user using API",()=>{
-    R365Api.createR365User({ userFullName:'test209',
-        userLoginName:'test343',
+    r365Api.createR365User({ userFullName:'usertestd',
+        userLoginName:'usertestd',
         userPassword:'pass343',
         userLocation:'746cfd04-0de5-e711-93ff-0cc47abcc4a5',
         userNumber:'1234567765',
-        userEmail:'test34@gmail.com'});
+        userEmail:'usertestd@gmail.com'}).then(id=>{
+            userId=id;
+        });
 
 
-})
-  
+});
+
