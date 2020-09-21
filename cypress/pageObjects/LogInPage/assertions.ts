@@ -15,5 +15,11 @@ class LogInPageAssertions {
     checkInvalidUserNameOrPasswprd() {
         cy.contains("Invalid UserName or Password").should('be.visible')
     }
+    findNewUserAPI(username: string) {
+        cy.get('input[type="text"]').type(username)
+        return this;
+        //cy.contains("h3","Flash Report").should("be.visible")
+
+    }
 
 } export default LogInPageAssertions

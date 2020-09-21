@@ -106,5 +106,33 @@ class CreateNewUserAPIRequest {
             headers: { Referer: Cypress.config("baseUrl") },
         });
     };
+
+    getAllUsers = () => {
+
+        return cy
+            .request(
+                "POST", Cypress.config("baseUrl") + "ServiceStack/GridSourceRequest",
+                {
+                    LoginType: "1",
+                    isEmployee: "0",
+                    text: "%24inlinecount=allpages&%24format=json&gridName=Users&userID=10aec560-b9d7-44ad-9d9b-4e44c433fe75&%24top=1000",
+                })
+            .then((res) => res.body.results);
+
+
+    };
+
+    deleteUser(userName: string) {
+        this.getAllUsers().then(users => {
+            users.filter(user => user.UserName === userName &&
+                cy.request({
+                    method: "DELETE",
+                    url: Cypress.config("baseUrl") + "/ServiceStack/Users/" + user.UserId,
+                })
+            )
+        });
+    }
+
 }
+
 export default CreateNewUserAPIRequest;

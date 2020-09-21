@@ -16,7 +16,7 @@ class LogInPageActions {
     }
 
     clickOnSignInButton() {
-        cy.contains(".btn", "Sign In")
+        cy.contains(".btn", "Sign In").click();
     }
 }
 export default LogInPageActions

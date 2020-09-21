@@ -11,7 +11,8 @@ const loginAssertions = new LogInPageAssertions()
 
 
 Given("The system has a user", () => {
-    createUser.createNewUser('sondos alzain2', 'sondos2', 'Soso@591995', 'sondos@testtest.com')
+    createUser.createNewUser('Sondos Hisham', 'SondosHisham', 'Soso@5df91995', 'sondos@testtesttt.com')
+
 })
 
 Given("The user opens login page", () => {
@@ -53,6 +54,11 @@ Then('Error message should be visible Please fill in this field', () => {
 
 Then('Shuold see pop up error message Invalid UserNmae Or Password', () => {
     loginAssertions.checkInvalidUserNameOrPasswprd()
+})
+
+Then('Delete the new user', () => {
+    createUser.deleteUser('SondosHisham')
+
 })
 
 
