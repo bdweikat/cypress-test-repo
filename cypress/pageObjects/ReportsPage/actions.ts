@@ -14,7 +14,4 @@ class MyReportsActions {
         cy.contains('OK').click()
     }
 
-    clickEnterForSearch() {
-        cy.get('md_icon[aria-label="menu"]').click()
-    }
 } export default MyReportsActions
