@@ -3,6 +3,13 @@ class Actions {
     cy.visit("/#/register");
   }
 
+  /*getAllFeilds() {
+    cy.get('[type="text"]').as("username1");
+    cy.get('[type="email"]').as("email");
+    cy.get('[type="password"]').as("password");
+
+    return this;
+  }*/
   fillUserName(username) {
     cy.get('[type="text"]').clear().type(username);
     return this;
@@ -18,7 +25,7 @@ class Actions {
     return this;
   }
 
-  submit() {
+  clickOnSigninButton() {
     cy.get('[type="submit"]').click();
   }
 }

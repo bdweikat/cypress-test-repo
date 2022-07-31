@@ -1,5 +1,5 @@
 class Assert {
-  UserFeedApperance() {
+  userFeedApperance() {
     cy.contains("Your Feed").should("be.visible");
   }
 }

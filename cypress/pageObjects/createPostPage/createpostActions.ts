@@ -7,11 +7,11 @@ class Actions {
     cy.contains("Your Feed").should("be.visible");
   }
 
-  clickOnNewPostButton() {
+  clickNewPostButton() {
     cy.get('[href="#editor"]').click();
   }
 
-  fillAllTheFourFeild(articleTitle, theIdea, articleBody, Tags) {
+  fillAllFeilds(articleTitle, theIdea, articleBody, Tags) {
     cy.get('[placeholder="Article Title"]').type(articleTitle);
     cy.get(":nth-child(2) > .form-control").type(theIdea);
     cy.get('[placeholder="Write your article (in markdown)"]').type(
@@ -21,7 +21,7 @@ class Actions {
     return this;
   }
 
-  ClickOnThePublishArticleButton() {
+  clickPublishArticleButton() {
     cy.get('[type="button"]').click();
   }
 }
