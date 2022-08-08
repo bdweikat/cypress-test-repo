@@ -1,4 +1,5 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
+
 import LoginActions from "@pageObjects/loginPage/loginActions";
 import LoginAssertions from "@pageObjects/loginPage/loginAssersions";
 //objects creation
@@ -6,23 +7,24 @@ const loginAction = new LoginActions();
 const loginAssert = new LoginAssertions();
 
 //constants declaration
-const emaill: string = "danazagha@hotmail.com";
-const passwordd: string = "layan123";
+const email: string = "danazagha@hotmail.com";
 
-//test#1
 Given("User Open Login Page", () => {
   loginAction.openLoginPage();
 });
 
-When("User Enter A valid Email and valid password", () => {
-  loginAction.fillEmail(emaill);
-  loginAction.fillPassword(passwordd);
+When("the password field is empty", () => {
+  loginAction.fillEmail(email);
 });
 
-And("User Click On Sign in Button", () => {
+And("Signin Button Is Clicked", () => {
   loginAction.clickSubmitButton();
 });
 
-Then("User Login Successfully", () => {
-  loginAssert.checkUserFeedVisiblity();
+Then("Erroor message should showw", () => {
+  loginAssert.checkEmptyPasswordErrorMsgg();
+});
+
+And("User shouldd not be able to login", () => {
+  loginAssert.checkUrlValidity();
 });

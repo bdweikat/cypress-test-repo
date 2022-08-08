@@ -6,23 +6,27 @@ const loginAction = new LoginActions();
 const loginAssert = new LoginAssertions();
 
 //constants declaration
-const emaill: string = "danazagha@hotmail.com";
-const passwordd: string = "layan123";
+const email: string = "danazagha@hotmail.com";
+const password: string = "layan12";
 
 //test#1
 Given("User Open Login Page", () => {
   loginAction.openLoginPage();
 });
 
-When("User Enter A valid Email and valid password", () => {
-  loginAction.fillEmail(emaill);
-  loginAction.fillPassword(passwordd);
+When("User Enter invalid Password and valid email", () => {
+  loginAction.fillEmail(email);
+  loginAction.fillPassword(password);
 });
 
 And("User Click On Sign in Button", () => {
   loginAction.clickSubmitButton();
 });
 
-Then("User Login Successfully", () => {
-  loginAssert.checkUserFeedVisiblity();
+Then("Error messagge should show", () => {
+  loginAssert.checkPasswordValidatoinErrorMsg();
+});
+
+And("User should not be ablee to login", () => {
+  loginAssert.checkUrlValidity();
 });

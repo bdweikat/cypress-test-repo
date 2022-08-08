@@ -1,27 +1,37 @@
-import loginActions from "C:/Users/HP/Desktop/cypress-test-repo/cypress/pageObjects/loginPage/loginActions";
-
-const loginAction = new loginActions();
 class LoginAssertions {
-  checkUserFeedVisible(isVisibe = true) {
+  checkUrlValidity() {
+    cy.url().should("contains", "https://react-redux.realworld.io/#/login?");
+  }
+  checkAllComponentsVisiblity(isVisibe = true) {
+    cy.get(".auth-page").should(isVisibe ? "be.visible" : "not.exist");
+  }
+
+  checkUserFeedVisiblity(isVisibe = true) {
     cy.contains("Your Feed").should(isVisibe ? "be.visible" : "not.exist");
   }
 
-  checkTheExistancefEmail(isVisibe = true) {
-    loginAction
-      .getEmailErrorMessage()
-      .should(isVisibe ? "be.visible" : "not.exist");
-    /* cy.get(".error-messages")
-      .should(isVisibe ? "be.visible" : "not.exist")
-      .and("eq", "email can't be blank");*/
+  checkSignUpPageUrl(isContain = true) {
+    cy.url().should("contain", "https://react-redux.realworld.io/#/register?");
   }
 
-  checkTheExistancefPassword(isVisibe = true) {
-    loginAction
-      .getPasswordErrorMessage()
-      .should(isVisibe ? "be.visible" : "not.exist");
-    /* cy.get(".error-messages")
-      .should(isVisibe ? "be.visible" : "not.exist")
-      .and("eq", "email can't be blank");*/
+  checkEmailValidationError(isVisibe = true) {
+    cy.contains("li", "email").should(isVisibe ? "be.visible" : "not.exist");
+  }
+
+  checkPasswordValidatoinErrorMsg(isVisibe = true) {
+    cy.contains("ul", "password").should(isVisibe ? "be.visible" : "not.exist");
+  }
+
+  checkEmptyEmailErrorMsg(isVisibe = true) {
+    cy.contains("li", "email can't be blank").should(
+      isVisibe ? "be.visible" : "not.exist"
+    );
+  }
+
+  checkEmptyPasswordErrorMsgg(isVisibe = true) {
+    cy.contains("li", "password can't be blank").should(
+      isVisibe ? "be.visible" : "not.exist"
+    );
   }
 }
 

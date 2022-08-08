@@ -1,15 +1,20 @@
-class Actions {
-  visit() {
+class SignupActions {
+  goSignupPage() {
     cy.visit("/#/register");
   }
 
-  /*getAllFeilds() {
-    cy.get('[type="text"]').as("username1");
-    cy.get('[type="email"]').as("email");
-    cy.get('[type="password"]').as("password");
-
+  ///////////////getters
+  getUsername() {
+    cy.get('[type="text"]');
     return this;
-  }*/
+  }
+
+  getEmail() {
+    cy.get('[type="email"]');
+    return this;
+  }
+
+  ///////////filling
   fillUserName(username) {
     cy.get('[type="text"]').clear().type(username);
     return this;
@@ -24,9 +29,13 @@ class Actions {
     cy.get('[type="password"]').clear().type(password);
     return this;
   }
-
+  //////////clicking
   clickOnSigninButton() {
     cy.get('[type="submit"]').click();
   }
+
+  clickOnHaveAnAcoountButton() {
+    cy.contains("a", "Have an account?").click();
+  }
 }
-export default Actions;
+export default SignupActions;

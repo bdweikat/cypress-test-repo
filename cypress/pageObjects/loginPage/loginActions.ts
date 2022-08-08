@@ -1,36 +1,26 @@
 class LoginActions {
   openLoginPage() {
     cy.visit("/#/login");
+
     return this;
   }
 
-  getEmailErrorMessage() {
-    return cy.contains("email ");
+  //filling actions
+  fillEmail(email: string) {
+    return cy.get('[type="email"]').clear().type(email);
   }
 
-  getPasswordErrorMessage() {
-    return cy.contains("password");
-  }
-  getEmail() {
-    return cy.get('[type="email"]').clear();
+  fillPassword(password: string) {
+    return cy.get('[type="password"]').clear().type(password);
   }
 
-  getPassword() {
-    return cy.get('[type="password"]').clear();
-  }
-
-  fillEmail(email) {
-    this.getEmail().type(email);
-    return this;
-  }
-
-  fillPassword(password) {
-    this.getPassword().type(password);
-    return this;
-  }
-
+  //click actions
   clickSubmitButton() {
     cy.get('[type="submit"]').click();
+  }
+
+  clickNeedAnAccountButton() {
+    cy.contains("a", "Need an account?").click();
   }
 }
 

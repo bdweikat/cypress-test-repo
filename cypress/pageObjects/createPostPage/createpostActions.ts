@@ -1,28 +1,53 @@
-class Actions {
-  loginSteps(email, password) {
-    cy.visit("/#/login");
-    cy.get('[type="email"]').type(email);
-    cy.get('[type="password"]').type(password);
-    cy.get('[type="submit"]').click();
-    cy.contains("Your Feed").should("be.visible");
-  }
-
-  clickNewPostButton() {
-    cy.get('[href="#editor"]').click();
-  }
-
-  fillAllFeilds(articleTitle, theIdea, articleBody, Tags) {
-    cy.get('[placeholder="Article Title"]').type(articleTitle);
-    cy.get(":nth-child(2) > .form-control").type(theIdea);
-    cy.get('[placeholder="Write your article (in markdown)"]').type(
-      articleBody
-    );
-    cy.get('[placeholder="Enter tags"]').type(Tags);
+class createPostActions {
+  goToCreatePostPage() {
+    cy.visit("/");
     return this;
   }
 
+  findUserArticle() {
+    cy.get(":nth-child(1) > .nav-link").click();
+    return cy.get(".feed-toggle > .nav > :nth-child(2) > .nav-link").click();
+  }
+
+  //filling feilds
+  fillTitleField(articleTitle) {
+    cy.get("input").eq(0).clear().type(articleTitle);
+    return this;
+  }
+
+  fillIdeaField(theIdea) {
+    cy.get("input").eq(1).clear().type(theIdea);
+    return this;
+  }
+
+  fillBodyField(articleBody) {
+    cy.get("textarea").clear().type(articleBody);
+    return this;
+  }
+
+  fillTagField(Tags) {
+    cy.get("fieldset").children().eq(3).type(Tags);
+    return this;
+  }
+
+  //buttons clicking
+  clickNewPostButton() {
+    cy.contains("a", "New Post").click();
+    return this;
+  }
   clickPublishArticleButton() {
-    cy.get('[type="button"]').click();
+    cy.contains("button", "Publish Article").click();
+    return this;
+  }
+
+  clickHomeButton() {
+    cy.contains("a", "Home").click();
+    return this;
+  }
+
+  clickGlobalFeedButton() {
+    cy.contains("a", "Global Feed").click();
+    return this;
   }
 }
-export default Actions;
+export default createPostActions;
