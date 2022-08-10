@@ -14,9 +14,9 @@ const email: string = "danazagha@hotmail.com";
 const password: string = "layan123";
 const newIdea: string = "welcome";
 
-Given("User choose article to modify", () => {
+Given("user click on edit article button", () => {
   cy.log(email, password);
-  articleModAsser.goToModificationPageAndCheckUrl();
+  articleModAsser.goToArticlePageAndCheckUrl();
   articleModf.clickEditArticleButton();
 });
 

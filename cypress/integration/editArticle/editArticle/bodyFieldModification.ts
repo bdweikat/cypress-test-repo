@@ -1,11 +1,9 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 import createPostActions from "@pageObjects/createPostPage/createpostActions";
-import createPostAssert from "@pageObjects/createPostPage/createPostAssert";
 import articleModActions from "@pageObjects/articlePage/articlePageActions";
 import articleModAssertions from "@pageObjects/articlePage/articlePageAssertions";
 import editArticleAssert from "@pageObjects/editArticlePage/editArticleAssert";
 //objects creation
-const postAssertion = new createPostAssert();
 const postAction = new createPostActions();
 const articleModf = new articleModActions();
 const articleModAsser = new articleModAssertions();
@@ -16,9 +14,9 @@ const email: string = "danazagha@hotmail.com";
 const password: string = "layan123";
 const newBody: string = "testingsijfhfklshiggsklgsjlhlghsdjlhaifhslfhsdflshfh";
 
-Given("User choose article to modify", () => {
+Given("user click on edit article button", () => {
   cy.log(email, password);
-  articleModAsser.goToModificationPageAndCheckUrl();
+  articleModAsser.goToArticlePageAndCheckUrl();
   articleModf.clickEditArticleButton();
 });
 

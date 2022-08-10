@@ -9,12 +9,9 @@ const articleModAsser = new articleModAssertions();
 const email: string = "danazagha@hotmail.com";
 const password: string = "layan123";
 
-Given("click on the article title button", () => {
+Given("user click on edit article button", () => {
   cy.log(email, password);
-  articleModAsser.goToModificationPageAndCheckUrl();
-});
-
-When("user click on edit article button", () => {
+  articleModAsser.goToArticlePageAndCheckUrl();
   articleModf.clickEditArticleButton();
 });
 

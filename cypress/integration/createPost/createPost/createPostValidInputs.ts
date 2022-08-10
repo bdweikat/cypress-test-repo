@@ -9,7 +9,7 @@ const postAssert = new createPostAssert();
 //constants declaration
 const email: string = "danazagha@hotmail.com";
 const password: string = "layan123";
-const articleTitle: string = "testing21";
+const articleTitle: string = "testin505";
 const theIdea: string = "Automation Testing Using Cypress";
 const articleBody: string =
   "The web has evolved.Finally, testing has too.Fast, easy and reliable testing for anything that runs in a browser";

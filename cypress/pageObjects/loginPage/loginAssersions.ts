@@ -10,7 +10,7 @@ class LoginAssertions {
     cy.contains("Your Feed").should(isVisibe ? "be.visible" : "not.exist");
   }
 
-  checkSignUpPageUrl(isContain = true) {
+  checkSignUpPageUrl() {
     cy.url().should("contain", "https://react-redux.realworld.io/#/register?");
   }
 

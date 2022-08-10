@@ -9,7 +9,7 @@ class createPostAssert {
   }
 
   checkArticleTitle(articleTitle: string) {
-    cy.get(".banner > .container").should("contain", articleTitle);
+    cy.get(".banner").children().should("contain", articleTitle);
     return this;
   }
   //Error Messages

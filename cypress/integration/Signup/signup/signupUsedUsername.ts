@@ -1,12 +1,10 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import loginPageLocators from "cypress/locators/loginPageLocators";
-import LoginActions from "@pageObjects/loginPage/loginActions";
 import LoginAssertions from "@pageObjects/loginPage/loginAssersions";
 import SignupAssertion from "@pageObjects/signupPage/signupAssersions";
 import SignupActions from "@pageObjects/signupPage/signupActions";
 
 //objects creation
-const loginAction = new LoginActions();
+
 const loginAssert = new LoginAssertions();
 const signupAction = new SignupActions();
 const signupAssert = new SignupAssertion();
@@ -29,7 +27,7 @@ And("Signin Button Is Clicked", () => {
   signupAction.clickOnSigninButton();
 });
 
-Then("UsedUsernameError message should show", () => {
+Then("UsedUsernameError message should be shown", () => {
   signupAssert.checkUsedUsernameErrorMsg();
 });
 

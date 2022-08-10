@@ -11,7 +11,7 @@ const password: string = "layan123";
 
 Given("click on the article title", () => {
   cy.log(email, password);
-  articleModAsser.goToModificationPageAndCheckUrl();
+  articleModAsser.goToArticlePageAndCheckUrl();
 });
 
 Then("User see all components of the page", () => {

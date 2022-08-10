@@ -2,8 +2,7 @@ Feature: Testing Artile Modification
 
 
     Scenario: Test the validity of the Artile Modification page url
-        Given User Sign in Website
-        When User click on Global Feed Button
+        Given click on thee article title
         Then the modification page will appear
 
     Scenario: Test The Visibility of all the fields in the modification page

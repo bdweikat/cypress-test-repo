@@ -18,12 +18,14 @@ Cypress.Commands.add("log", (email, password) => {
   });
 });
 
-Cypress.Commands.add("hi", () => {
-  cy.visit("/");
-  cy.contains("a", "Global Feed").click();
-  cy.get(".preview-link").eq(0).children().first().click();
-  cy.get("h1").invoke("text").as("clickedTitle");
-  cy.get("@clickedTitle").then((clickedTitle) => {
-    cy.url().should("contain", clickedTitle);
+Cypress.Commands.add("hiY", (email, password) => {
+  cy.session([email, password], () => {
+    cy.visit("/");
+    cy.contains("a", "Global Feed").click();
+    cy.get(".preview-link").eq(0).children().first().click();
+    cy.get("h1").invoke("text").as("clickedTitle");
+    cy.get("@clickedTitle").then((clickedTitle) => {
+      cy.url().should("contain", clickedTitle);
+    });
   });
 });

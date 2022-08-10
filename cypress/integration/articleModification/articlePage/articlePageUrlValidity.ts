@@ -10,15 +10,11 @@ const articleModAsser = new articleModAssertions();
 const email: string = "danazagha@hotmail.com";
 const password: string = "layan123";
 
-Given("User Sign in Website", () => {
+Given("click on thee article title", () => {
   cy.log(email, password);
-});
-
-When("User click on Global Feed Button", () => {
-  cy.visit("/");
-  postAction.clickGlobalFeedButton();
+  articleModAsser.getmyArticleUrl();
 });
 
 Then("the modification page will appear", () => {
-  articleModAsser.getAndCheckArticleUrl();
+  articleModAsser.checkmyArticleUrl();
 });
