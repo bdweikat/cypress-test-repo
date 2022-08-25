@@ -1,4 +1,4 @@
-import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
+/*import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 import createPostActions from "@pageObjects/createPostPage/createpostActions";
 import articleModActions from "@pageObjects/articlePage/articlePageActions";
 import articleModAssertions from "@pageObjects/articlePage/articlePageAssertions";
@@ -28,3 +28,4 @@ When("modify the idea of the article", () => {
 Then("the modified Idea will appear", () => {
   editAssertion.getAndCheckArticleIdea();
 });
+*/

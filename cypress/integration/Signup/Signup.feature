@@ -3,20 +3,11 @@ Feature: Testing SignUp Page
     Background:
         Given User Open SignUp Page
 
-    Scenario: Test SignUp Page With Used Email & Password
-        When User enter a used Email and Password
-        And  Signin Button Is Clicked
-        Then EmailuError message should be shown
-        And PassworduError message should be shown
-        * User should not be able to SignUp
+
 
     Scenario: Test the validity of the SignUp page url
         Then the SignUp page will appear
 
-
-    Scenario: Test The Visibility of all the fields in the SignUp page
-
-        Then User see all components of the page
 
 
     Scenario: Test SignUp Page With Valid Format Inputs
@@ -66,6 +57,13 @@ Feature: Testing SignUp Page
         Then UsedEmailError message should be shown
         And User should not be able to SignUp
 
+
+    Scenario: Test SignUp Page With Used Email & Password
+        When User enter a used Email and Password
+        And  Signin Button Is Clicked
+        Then EmailuError message should be shown
+        And PassworduError message should be shown
+        * User should not be able to SignUp
 
 
 

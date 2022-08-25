@@ -7,10 +7,6 @@ Feature: Testing Post Creation
         Then the ceratePost page will appear
 
 
-    Scenario: Test The Visibility of all the fields in the create Post page
-        Given User go to create post page
-        Then User see all components of the page
-
 
     Scenario: Test Article Creation
 

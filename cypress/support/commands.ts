@@ -4,21 +4,28 @@ import "cypress-wait-until";
 
 declare global {
   namespace Cypress {
-    interface Chainable {}
+    interface Chainable {
+      loginByApi(email: string, password: string);
+    }
   }
 }
 
-Cypress.Commands.add("log", (email, password) => {
-  cy.session([email, password], () => {
-    cy.visit("/#/login");
-    cy.get('[type="email"]').type(email);
-    cy.get('[type="password"]').type(password);
-    cy.get('[type="submit"]').click();
-    cy.contains("Your Feed").should("be.visible");
-  });
+Cypress.Commands.add("loginByApi", (email, password) => {
+  return cy
+    .request({
+      method: "POST",
+      url: `https://api.realworld.io/api/users/login`,
+      body: {
+        user: { email, password },
+      },
+    })
+    .then((resp) => {
+      localStorage.setItem("jwt", resp.body.user.token);
+      //localStorage.setItem("userInfo", JSON.stringify(resp.body.user));
+    });
 });
 
-Cypress.Commands.add("hiY", (email, password) => {
+/*Cypress.Commands.add("hiY", (email, password) => {
   cy.session([email, password], () => {
     cy.visit("/");
     cy.contains("a", "Global Feed").click();
@@ -28,4 +35,4 @@ Cypress.Commands.add("hiY", (email, password) => {
       cy.url().should("contain", clickedTitle);
     });
   });
-});
+});*/

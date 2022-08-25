@@ -1,6 +1,7 @@
 class SignupActions {
   goSignupPage() {
     cy.visit("/#/register");
+    return this;
   }
 
   ///////////////getters
@@ -32,10 +33,12 @@ class SignupActions {
   //////////clicking
   clickOnSigninButton() {
     cy.get('[type="submit"]').click();
+    return this;
   }
 
   clickOnHaveAnAcoountButton() {
     cy.contains("a", "Have an account?").click();
+    return this;
   }
 }
 export default SignupActions;

@@ -8,10 +8,6 @@ Feature: Testing Login
         Then the login page will appear
 
 
-    Scenario: Test The Visibility of all the fields in the login page
-
-        Then User see all components of the page
-
 
     Scenario: Test Login Page With Valid Inputs
         When User Enter A valid Email and valid password

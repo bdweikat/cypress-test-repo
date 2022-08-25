@@ -15,8 +15,8 @@ const articleBody: string =
 const tags: string = "@layan";
 
 Given("User go to the article page", () => {
-  cy.log(email, password);
-  cy.visit("/#/editor?");
+  cy.loginByApi(email, password);
+  cy.visit("/#/editor");
 });
 
 When("The Title field is empty", () => {

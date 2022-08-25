@@ -8,6 +8,7 @@ class editArticleAssert {
       cy.get(".author").click();
       cy.get(".article-preview").eq(0).should("contain", newIdea);
     });
+    return this;
   }
 
   getAndCheckArticleBody() {
@@ -17,6 +18,7 @@ class editArticleAssert {
       cy.wait(600);
       cy.get(".row").children().first().children().should("contain", newBody);
     });
+    return this;
   }
 
   getAndCheckArticleTitle() {
@@ -26,6 +28,7 @@ class editArticleAssert {
       cy.wait(600);
       cy.get("h1").should("contain", clickedTitle);
     });
+    return this;
   }
 }
 export default editArticleAssert;

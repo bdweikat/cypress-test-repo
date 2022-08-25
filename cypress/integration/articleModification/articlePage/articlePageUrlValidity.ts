@@ -11,7 +11,8 @@ const email: string = "danazagha@hotmail.com";
 const password: string = "layan123";
 
 Given("click on thee article title", () => {
-  cy.log(email, password);
+  cy.loginByApi(email, password);
+  cy.visit("/");
   articleModAsser.getmyArticleUrl();
 });
 

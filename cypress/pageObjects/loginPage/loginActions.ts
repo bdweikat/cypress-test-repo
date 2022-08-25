@@ -17,10 +17,12 @@ class LoginActions {
   //click actions
   clickSubmitButton() {
     cy.get('[type="submit"]').click();
+    return this;
   }
 
   clickNeedAnAccountButton() {
     cy.contains("a", "Need an account?").click();
+    return this;
   }
 }
 

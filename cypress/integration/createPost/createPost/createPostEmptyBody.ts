@@ -14,8 +14,8 @@ const theIdea: string = "Automation Testing Using Cypress";
 const tags: string = "@layan";
 
 Given("User go to the article page", () => {
-  cy.log(email, password);
-  cy.visit("/#/editor?");
+  cy.loginByApi(email, password);
+  cy.visit("/#/editor");
 });
 
 When("The Body field is empty", () => {

@@ -16,8 +16,8 @@ const articleBody: string =
 const tags: string = "@layan";
 
 Given("User gotocreate post page", () => {
-  cy.log(email, password);
-  cy.visit("/#/editor?");
+  cy.loginByApi(email, password);
+  cy.visit("/#/editor");
 });
 
 When("User Fill All The Fields In The Page", () => {

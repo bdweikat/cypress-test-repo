@@ -15,8 +15,8 @@ const articleBody: string =
   "The web has evolved.Finally, testing has too.Fast, easy and reliable testing for anything that runs in a browser";
 
 Given("User go to the article page", () => {
-  cy.log(email, password);
-  cy.visit("/#/editor?");
+  cy.loginByApi(email, password);
+  cy.visit("/#/editor");
 });
 
 When("The Tags field is empty", () => {

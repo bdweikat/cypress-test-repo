@@ -1,10 +1,6 @@
 class createPostAssert {
   checkCreatePostUrl() {
     cy.url().should("contain", "https://react-redux.realworld.io/#/editor?");
-  }
-
-  checkAllComponentsVisiblity(isVisibe = true) {
-    cy.get(".row").should(isVisibe ? "be.visible" : "not.exist");
     return this;
   }
 
