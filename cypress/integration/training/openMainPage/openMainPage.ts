@@ -12,8 +12,8 @@ Given("User open Main Page" , ()=>{
     cy.get('.col-md-9').children();
     cy.contains('Create a new implementation');
     cy.get('.tag-default.tag-pill.tag-outline').first().click();*/
-    cy.visit("/register");
-    cy.get('[type="text"]').type('Name');
+    cy.visit("/editor");
+   // cy.request("")
    // cy.get(':nth-child(3) > .nav-link').click();
     //cy.go('back');
     //cy.get(':nth-child(1) > .form-control').type('Dana');
