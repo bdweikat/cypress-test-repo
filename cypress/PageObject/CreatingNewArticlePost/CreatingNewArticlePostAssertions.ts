@@ -1,6 +1,9 @@
 class createpostAssertion{
   NewpostFormAppearance(){
-    cy.get('[placeholder="Article Title"]').should("be.visible");
+    cy.get("input").eq(0).should("be.visible");
+    cy.get("input").eq(1).should("be.visible");
+    cy.get("textarea").should("be.visible");
+    cy.get("input").eq(2).should("be.visible");
   }
   ArticlePublishedSuccessfully(){
     cy.get('[href="#/editor/Cypress-92119"]').should("be.visible");
@@ -19,7 +22,7 @@ class createpostAssertion{
   }
 
   Publishednotsuccesfully(){
-    cy.get('[placeholder="Article Title"]').should("be.visible");
+    cy.get("input").eq(0).should("be.visible");
   }
 }
 export default createpostAssertion

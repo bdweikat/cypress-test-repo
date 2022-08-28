@@ -14,7 +14,7 @@ Given('User click on new post button',()=>{
     createpostaction.clickNewPostBtn();
 })
 
-Then('form of publish article appear',()=>{
+Then('form of publish article with four fields appear',()=>{
     createpostassertion.NewpostFormAppearance();
 })
 

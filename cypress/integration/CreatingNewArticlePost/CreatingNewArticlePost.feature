@@ -4,7 +4,7 @@ Background:
 Given User click on new post button
 
 Scenario:Testing click on new post button
-Then form of publish article appear
+Then form of publish article with four fields appear
 
 Scenario: Testing publish Article with Enter all inputs of form
 When User Enter Article Title and Description and Body and tags inputs

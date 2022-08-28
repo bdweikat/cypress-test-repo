@@ -3,16 +3,16 @@ class createpostActions{
         cy.get('[href="#editor"]').click();
     }
     FillArticleTitle(Title){
-        cy.get('[placeholder="Article Title"]').clear().type(Title);
+        cy.get("input").eq(0).clear().type(Title);
     }
     FillAbout(about){
-        cy.get(':nth-child(2) > .form-control').clear().type(about);
+        cy.get("input").eq(1).clear().type(about);
     }
     FillArticle(Article){
-        cy.get('[placeholder="Write your article (in markdown)"]').clear().type(Article);
+        cy.get("textarea").clear().type(Article);
     }
     FillTags(tags){
-        cy.get('[placeholder="Enter tags"]').clear().type(tags);
+        cy.get("input").eq(2).clear().type(tags);
     }
     clickpublishArticle(){
         cy.get('[type="button"]').click();
