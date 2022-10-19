@@ -1,15 +1,21 @@
 {
-  "baseUrl": "https://qaintazugg.restaurant365.com/",
+  "baseUrl": "https://gudel-hub-dev.com/",
   "viewportHeight": 900,
   "viewportWidth": 1600,
   "requestTimeout": 150000,
   "responseTimeout": 150000,
-  "blockHosts": ["**pendo*", "**package.json"],
+  "blockHosts": [
+    "**pendo*",
+    "**package.json"
+  ],
   "supportFile": "cypress/support/index.ts",
   "modifyObstructiveCode": false,
   "defaultCommandTimeout": 6000,
   "pageLoadTimeout": 150000,
-  "ignoreTestFiles": ["*.ts", "*.help"],
+  "ignoreTestFiles": [
+    "*.ts",
+    "*.help"
+  ],
   "smokeTestUrl": "",
   "smokeTestAppPath": "",
   "video": false,
@@ -21,14 +27,5 @@
   "reporterOptions": {
     "configFile": "reporterOpts.json"
   },
-  "chromeWebSecurity": false,
-  "env": {
-    "URL_2": "",
-    "URL_3": "",
-    "appPath": "",
-    "angular": "",
-    "react": "react/",
-    "serviceStack": "ServiceStack/",
-    "netCore": "NetCore/"
-  }
+  "chromeWebSecurity": false
 }
