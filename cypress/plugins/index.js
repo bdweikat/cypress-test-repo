@@ -1,7 +1,20 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+//For Cucumber Integration
+const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild")
+  .createEsbuildPlugin;
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const nodePolyfills = require("@esbuild-plugins/node-modules-polyfill")
+  .NodeModulesPolyfillPlugin;
+const addCucumberPreprocessorPlugin = require("@badeball/cypress-cucumber-preprocessor")
+  .addCucumberPreprocessorPlugin;
 
-const cypressTypeScriptPreprocessor = require("./cy-ts-preprocessor");
+module.exports = async (on, config) => {
+  await addCucumberPreprocessorPlugin(on, config);
+  on(
+    "file:preprocessor",
+    createBundler({
+      plugins: [nodePolyfills(), createEsbuildPlugin(config)],
+    })
+  );
 
-module.exports = (on, config) => {
-    on("file:preprocessor", cypressTypeScriptPreprocessor);
+  return config;
 };

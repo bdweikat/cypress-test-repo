@@ -3,7 +3,7 @@ import "cypress-file-upload";
 import "cypress-wait-until";
 
 declare global {
-    namespace Cypress {
-        interface Chainable {}
-    }
+  namespace Cypress {
+    interface Chainable {}
+  }
 }
